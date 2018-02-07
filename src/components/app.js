@@ -1,13 +1,13 @@
 import React from 'react';
-import '../assets/css/app.css';
-import logo from '../assets/images/logo.svg';
+import { Route } from 'react-router-dom';
+
+import Events from './events';
+import Login from './login';
 
 const App = () => (
-    <div>
-        <div className="app">
-            <img src={logo} className="logo rotate"/>
-            <h1>Welcome to React</h1>
-        </div>
+    <div className="app">
+        <Route path="/" exact component={Login} />
+        <Route path="/events" component={Events} />
     </div>
 );
 
