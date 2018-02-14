@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { ReactRouter } from 'react-router';
 
-const Location = props => {
-    return (
-        <div>
-            <button>Irvine</button>
-            <button>Reno</button>
-            <button>San Diego</button>
-            <button>Temeucla</button>
-        </div>
-    )
+
+class Location extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+
+    goToLocation(event) {
+        event.preventDefault();
+        let locationId = this.refs.locationId.value;
+        console.log("Going to: ", locationId);
+        this.context.router.history.push(`/location/${locationId}/`);
+    }
+
+    render() {
+        return (
+            <form onSubmit={this.goToLocation.bind(this)}>
+                <h2>Please Enter a Location</h2>
+                <input type="text" ref="locationId" />
+                <button>Add Location</button>
+            </form>
+        )
+    }
+
+};
+
+Location.contextTypes = {
+    router: React.PropTypes.object
 };
 
 export default Location;

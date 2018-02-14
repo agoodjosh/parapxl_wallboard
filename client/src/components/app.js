@@ -1,16 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
-import Events from './events';
-import Login from './login';
-import Locations from './locations';
+import base from '../base';
 
-const App = () => (
-    <div className="app">
-        <Route path="/" exact component={Login} />
-        <Route path="/events" component={Events} />
-        <Route path="/locations" component={Locations} />
-    </div>
-);
+
+class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            walls: {
+                boards: {}
+            }
+        };
+    }
+
+    componentWillMount() {
+        this.ref = base.syncState(`${this.props.match.params.locationId}/walls`, {
+            context: this,
+            state: 'walls'
+        });
+    }
+
+    componentWillUnmount() {
+        base.removeBiding(this.ref);
+    }
+
+    render() {
+        return (
+            <div className="app">
+                <h1>Hi</h1>
+            </div>
+        );
+    }
+}
+
+
 
 export default App;
