@@ -4,9 +4,10 @@ import API_KEYS from '../keys';
 
 
 const app = Firebase.initializeApp({
-    apiKey: 'AIzaSyAIcLBMVJRCBo2oGc3rhis_tA3MrSGQ_xc',
-    authDomain: "wallboard-60183.firebaseapp.com",
-    databaseURL: "https://wallboard-60183.firebaseio.com",
+    apiKey: "AIzaSyChMbEHetWFPIjZG2wjGipmZm1xPcRsUYU",
+    authDomain: "pxlwallboard.firebaseapp.com",
+    databaseURL: "https://pxlwallboard.firebaseio.com",
+    projectId: "pxlwallboard",
 });
 
 const base = Rebase.createClass(app.database());

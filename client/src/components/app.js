@@ -15,6 +15,7 @@ class App extends Component {
     }
 
     componentWillMount() {
+        console.log('App.js CWP:', this.props.match.params.locationId);
         this.ref = base.syncState(`${this.props.match.params.locationId}/walls`, {
             context: this,
             state: 'walls'
