@@ -1,6 +1,5 @@
 import Rebase from 're-base';
 import Firebase from 'firebase';
-import API_KEYS from '../keys';
 
 
 const app = Firebase.initializeApp({
