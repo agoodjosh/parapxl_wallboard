@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ReactRouter } from 'react-router';
 
 
-class Location extends Component {
+class LocationsPicker extends Component {
     constructor(props) {
         super(props);
     }
@@ -31,4 +31,4 @@ Location.contextTypes = {
     router: React.PropTypes.object
 };
 
-export default Location;
+export default LocationsPicker;
