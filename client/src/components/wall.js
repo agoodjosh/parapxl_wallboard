@@ -6,6 +6,7 @@ class Wall extends Component {
     constructor(props) {
         super(props);
     }
+
     componentDidMount() {
         const locationRef = firebase.database().ref(this.props.locationId);
 
@@ -16,7 +17,7 @@ class Wall extends Component {
 
                 if (!data.name) {
                     locationRef.set({
-                        name: 'Costa Mesa, CA',
+                        name: this.props.locationId,
                         walls: { lobby: { name: "TV in Lobby" } }
                     });
                 }
@@ -26,9 +27,7 @@ class Wall extends Component {
     render() {
         return (
             <div>
-                <ul>
-                    {Object.keys(this.props.walls).map(this.renderInventory)}
-                </ul>
+                {/*Object.keys(this.props.walls).map(this.renderWalls)*/}
             </div>
         )
     }

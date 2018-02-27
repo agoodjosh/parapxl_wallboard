@@ -12,7 +12,7 @@ class LocationsPicker extends Component {
         event.preventDefault();
         let locationId = this.refs.locationId.value;
         console.log("Going to: ", locationId);
-        this.context.router.history.push(`/location/${locationId}/`);
+        this.props.history.push(`/location/${locationId}/`);
     }
 
     render() {

@@ -10,9 +10,7 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            walls: {
-                boards: {}
-            }
+            walls: {}
         };
     }
 
@@ -26,13 +24,13 @@ class App extends Component {
 
 
     componentWillUnmount() {
-        base.removeBiding(this.ref);
+        firebase.removeBiding(this.ref);
     }
 
     render() {
         return (
             <div className="app">
-                <h1>Hi</h1>
+                <h1>{}</h1>
                 {/*Object
                     .keys(this.props.walls)
                     .map(key => <Board
