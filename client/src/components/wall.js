@@ -49,7 +49,6 @@ class Wall extends Component {
                     return;
                 } else {
                     locationRef.set({
-                        name: this.props.locationId,
                         walls: this.state.walls,
                     });
                 }
@@ -63,7 +62,7 @@ class Wall extends Component {
                 {/*Object.keys(this.props.walls).map(this.renderWalls)*/}
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={this.handleInput} />
-                    <button>Submit</button>
+                    <button>Submit Wall</button>
                 </form>
             </div>
         )
