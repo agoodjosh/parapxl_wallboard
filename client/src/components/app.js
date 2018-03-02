@@ -9,13 +9,11 @@ import Wall from './wall';
 class App extends Component {
     constructor() {
         super();
-        this.state = {
-            walls: {}
-        };
     }
 
     componentWillMount() {
         console.log('App.js CWP:', this.props.match.params.locationId);
+
         this.ref = base.syncState(`${this.props.match.params.locationId}/walls`, {
             context: this,
             state: 'walls'
@@ -26,6 +24,7 @@ class App extends Component {
     componentWillUnmount() {
         firebase.removeBiding(this.ref);
     }
+
 
     render() {
         return (
@@ -39,9 +38,9 @@ class App extends Component {
                         details={this.props.walls[key]} />
                     )*/}
                 <Wall
-                    walls={this.state.walls}
                     locationId={this.props.match.params.locationId}
                 />
+
             </div>
         );
     }
